@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://purview:<password>@purview-mdb-tp4sv.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://purview:secretpassword@purview-mdb-tp4sv.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 
 // Mongoose Connection
@@ -17,24 +17,21 @@ const mongoose = require('mongoose');
 // }
 
 const adSchema = new mongoose.Schema({
-    name: {
+    filename: {
         default: '',
         type: String
     },
-    dateCreated: {
-        default: null,
-        type: Date
+    adUrl: {
+        default: '',
+        type: String
     },
-    views: {
-        default: 0,
-        type: Number
+    markerUrl: {
+        default: '',
+        type: String
     },
-    img: {
-        data: Buffer,
-        contentType: String
-    },
-    location: { // Longitude and Latitude?
-
+    markerPatternUrl: {
+        default: '',
+        type: String
     }
 })
 
