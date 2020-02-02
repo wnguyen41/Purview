@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <button style="z-index: -1; position: relative;">it's a button</button>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/camera-assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,24 +14,37 @@
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
     
+
+    
   </head>
   <body>
-    
+    <!-- <button style="z-index: -1; position: relative;">it's a button</button> -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    <a-scene  arjs="z-index: 0; position: relative;">
+    <a-scene embedded arjs>
       <a-assets>
         <img id="photo1" src="https://purview-s3.s3-us-west-1.amazonaws.com/memekid.jpg" crossorigin="anonymous" />  
         <img id="photo2" src="https://purview-s3.s3-us-west-1.amazonaws.com/pika.jpg" crossorigin="anonymous" />
+
+        <video id="video1" width="400" height="300" autoplay loop="true" mute="true" src="camera-assets/test.mp4"></video>
       </a-assets>
 
-      <a-marker preset='custom1' type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-red.patt'>
+      <a-marker preset="custom" type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-red.patt'>
+        <a-video src="#video1" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
+      </a-marker>
+
+      <a-marker preset="custom" type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-letterK.patt'>
+        <a-image src="#photo2" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
+      </a-marker>
+
+      <a-marker preset="hiro">
         <a-image src="#photo1" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
       </a-marker>
 
-      <a-marker preset='custom2' type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-cloud.patt'>
+
+      <!-- <a-marker preset="hiro">
         <a-image src="#photo2" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
-      </a-marker>
+      </a-marker> -->
 
       <a-entity camera></a-entity>
     </a-scene>

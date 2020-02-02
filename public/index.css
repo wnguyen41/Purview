@@ -1,0 +1,59 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inconsolata", sans-serif;
+  
+}
+
+.backgroundImage {
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://i.ibb.co/Gc5zptJ/purviewbackground-2.png ');
+  /* https://i.ibb.co/VgtPMpR/logo-test.png */
+  /* https://www.itl.cat/pngfile/big/7-75394_25-minimalist-qhd-wallpapers-for-your-pc-or.png */
+  min-height: 600px;
+  width:100%;
+}
+/*
+Supposed to place text below the marker for each button.
+*/
+.buttonText{
+  position:relative;
+  bottom: 5%;
+  margin: auto
+  
+}
+.menu {
+  display: none;
+}
+.watermarked {
+  position: relative;
+}
+
+.watermarked:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("https://i.ibb.co/VgtPMpR/logo-test.png");
+  background-size: 200px 200px;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.imagePadding
+{
+  padding: 10px;
+  background-position: center;
+  text-align: right;
+  margin: 10px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
