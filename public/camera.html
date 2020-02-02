@@ -13,40 +13,43 @@
 
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
-    
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous">
+    </script>
     
   </head>
-  <body>
+  <body style='margin : 0px; overflow: hidden;'>
     <!-- <button style="z-index: -1; position: relative;">it's a button</button> -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
     <a-scene embedded arjs>
-      <a-assets>
-        <img id="photo1" src="https://purview-s3.s3-us-west-1.amazonaws.com/memekid.jpg" crossorigin="anonymous" />  
+      <a-assets id="assets-container">
+        <!-- <img id="photo1" src="https://purview-s3.s3-us-west-1.amazonaws.com/memekid.jpg" crossorigin="anonymous" />  
         <img id="photo2" src="https://purview-s3.s3-us-west-1.amazonaws.com/pika.jpg" crossorigin="anonymous" />
-
-        <video id="video1" width="400" height="300" autoplay loop="true" mute="true" src="camera-assets/test.mp4"></video>
+        <video id="video1" width="400" height="300" autoplay loop="true" mute="true" src="camera-assets/test.mp4"></video> -->
       </a-assets>
 
-      <a-marker preset="custom" type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-red.patt'>
-        <a-video src="#video1" position="0 0.5 0" rotation="270 0 0" play="true"></a-video>
-      </a-marker>
-
-      <a-marker preset="custom" type='pattern' url='https://purview-s3.s3-us-west-1.amazonaws.com/pattern-letterK.patt'>
-        <a-image src="#photo2" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
-      </a-marker>
-
-      <a-marker preset="hiro">
-        <a-image src="#photo1" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
-      </a-marker>
-
-
-      <!-- <a-marker preset="hiro">
-        <a-image src="#photo2" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>
-      </a-marker> -->
+      <a-marker preset="hiro" id="hiro"></a-marker>
+      <a-marker preset="kanji" id="kanji"></a-marker>
+      <a-marker preset="custom" type="pattern" id="twodots" url="camera-assets/twodots.patt"></a-marker>
+      <!-- <a-marker preset="custom" type="pattern" id="letterc" url="camera-assets/letterc.patt"></a-marker>
+      <a-marker preset="custom" type="pattern" id="stairs" url="camera-assets/stairs.patt"></a-marker> -->
 
       <a-entity camera></a-entity>
     </a-scene>
+
+    <script>
+      axios.get('/getAds')
+        .then(({ data }) => { 
+          for ([num,{markerName, adUrl}] of data.entries()) {
+            $("#assets-container").append(`<img id="img${num}" src="${adUrl}" crossorigin="anonymous"/>`)
+            $(`#${markerName}`).append(`<a-image src="#img${num}" position="0 0 0" rotation="-90 0 0" width="" height="" opacity="1" transparent="true" alpha-test="0.2" scale="5 5 5"></a-image>`)
+          }
+        })
+        .catch(err => console.log(err))
+    </script>
   </body>
 </html>

@@ -19,106 +19,62 @@
   min-height: 60%;
 }</style> -->
 
+<header style="height:10%">
   <div class="w3-top">
     <div class="w3-row w3-padding w3-black">
-      <div class="w3-col s3">
-        <a href="#" class="w3-button w3-block w3-black">Home</a>
+
+     
+      <div class="w3-col s3" style="display:table">
+        <div style="display:table-row">
+          <div style="display:table-cell">
+            <img src="https://i.ibb.co/S6LYNsr/logo5.png" width = "80px" height = "80px">
+          </div>
+          <div style="display:table-cell">
+            <span class="w3-text-white" style="font-size:45px;">Purview</span>
+          </div>
+        </div>
       </div>
-      <div class="w3-col s3">
-        <a href="#about" class="w3-button w3-block w3-black">About</a>
+
+      <!-- <div class="w3-col s3">
+        <a href="#about" class="w3-button w3-block w3-black"><span class="w3-text-white" style="font-size:45px">Purview</span></a>
+      </div> -->
+
+     <div style = "float: right; margin:auto; padding-top:10px">
+        <form action="/camera">
+          <button class="camera">
+            <font style="font-size:30px">Camera</font>
+          </button>
+        </form>
       </div>
-      <div class="w3-col s3">
-        <a href="#menu" class="w3-button w3-block w3-black">Contacts</a>
-      </div>
-      <div class="w3-col s3">
+
+      <!-- <div class="w3-col s3">
         <a href="#where" class="w3-button w3-block w3-black">Credits</a>
-      </div>
+      </div> -->
     </div>
   </div>
-
-
-  <header class="backgroundImage w3-display-container w3-grayscale-min" id="home">
-      <!-- <div class="w3-display-bottommiddle w3-center w3-padding-large w3-hide-small">
-        <span class="w3-tag">Create your own Marker for your Images!</span>
-      </div> -->
-      <div class="w3-display-middle w3-center">
-        <span class="w3-text-blue" style="font-size:90px">Purview</span>
-      </div>
-      <div class="w3-display-bottommiddle w3-center w3-padding-large w3-hide-small">
-        <span class="w3-text-green" style="font-size:35px">Choose Your Marking!</span>
-      </div>
-  </header>
-    <div class="w3-sand w3-grayscale w3-large" style="max-width: 50%; margin: auto;">
+</header>
+  
+  
+  <body style="">
+    <div class="gradient">
+    
+      
+      <div class="w3-sand w3-grayscale w3-large" style="max-width: 50%; margin: auto;">
 
     <!-- Add a background color and large text to the whole page -->
-    <div class="w3-sand w3-grayscale w3-large">
+      <div class="w3-sand w3-grayscale w3-large">
 
-    
-  <!-- <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Purview Interface"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Purview</title>
-
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
-    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-    
-  </head> -->
-
-  <body>
-    
-    
-    <div >
-
-    <noscript>You need to enable JavaScript to run this app.</noscript> 
-
-    <!--Preset markers that are implemented-->
-
-    <!-- <div >
-    <button class="testButton1"><img src="http://www.hitl.washington.edu/artoolkit/documentation/images/patt1.jpg" alt="">Kanji</button>
-    </div >
-
-    <div >
-    <button class="testButton1"><img src="https://lh3.googleusercontent.com/proxy/CTBh7-ymk5rCcp-xkFrY5DV-p0GJ_WMVCqdiaxjI556bDNUPffFsTLgKfEYbA8FCBkMppzAaHaq62qFxFypmjoQNMcsB3rCxXG5EbqJ4W2bhCNKivN7ktqWtxkbCDww" alt="">Hiro</button>
-    </div > -->
-
-    <div class="w3-bar w3-black">
-      <button class="imagePadding w3-button w3-left"><img src="https://lh3.googleusercontent.com/proxy/CTBh7-ymk5rCcp-xkFrY5DV-p0GJ_WMVCqdiaxjI556bDNUPffFsTLgKfEYbA8FCBkMppzAaHaq62qFxFypmjoQNMcsB3rCxXG5EbqJ4W2bhCNKivN7ktqWtxkbCDww" width =200 height = 200> Hiro</button>
-      <button class="imagePadding w3-button w3-right"><img src=" https://cdn.glitch.com/1a6977ed-1215-4fb9-b040-5862a9786b35%2Fkanji-marker.png?1507486751836" width =200 height = 200><span > Kanji</span></button>
-      <button class="imagePadding w3-button w3-left"><img src="https://www.html5rocks.com/pt/tutorials/webgl/jsartoolkit_webrtc/marker.png"  width =200 height = 200> Square</button>
-      <button class="imagePadding w3-button w3-right"><img src="https://i0.wp.com/www.timesquatters.com/wp-content/uploads/2016/08/m1.jpg?fit=638%2C737&ssl=1" width =200 height = 200> Edged</button>
-      <button class="imagePadding w3-button w3-left"><img src=" http://www.hitl.washington.edu/artoolkit/documentation/images/patt1.jpg" width =200 height = 200> Hirogana</button>
-    
-     
-     
-    </div>
-    <!-- <p style="text-align:center">Upload Your Image</p> -->
-
-    <div style="text-align:center;  ">
-        <span  class="w3-text-blue" style="font-size:35px" >Upload Your Image!</span>
-    </div>
+       
 
 
-   
 
-    <!--Button to go to ar camera-->
-    <center>
+  
       <div >
-       <!--http://purview-ar.herokuapp.com/camera-->
-        <form action="http://localhost:8080/camera">
-            <input type="submit" value="Go to Camera" />
-        </form>
-      
-      </div>
-    </center>
+        <noscript>You need to enable JavaScript to run this app.</noscript> 
+
+      <div class="w3-bar w3-black">
+    </div>
+    
 
     <div id="root"></div>
   </body>
