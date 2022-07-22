@@ -14,7 +14,7 @@
     "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "file-type": "^13.1.2",
+    "file-type": "^16.5.4",
     "fs": "0.0.1-security",
     "internal-ip": "^5.0.0",
     "mongoose": "^5.8.11",
